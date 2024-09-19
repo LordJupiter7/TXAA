@@ -1,0 +1,670 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Exo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Scalable Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: clamp(10px, 3vw, 20px) 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-container {
+    display: flex;
+    gap: clamp(5px, 2vw, 10px);
+    margin-left: -150px;
+}
+
+.image-container img {
+    width: clamp(60px, 15vw, 110px);
+    height: clamp(60px, 15vw, 110px);
+    object-fit: cover;
+    border-radius: 50%;
+    display: flex;
+}
+
+header h1 {
+    font-size: clamp(24px, 5vw, 35px);
+    color: #333;
+    font-weight: 700;
+    display: flex;
+    vertical-align: auto;
+    padding: clamp(5px, 3vw, 10px);
+    
+}
+
+nav {
+    margin-left: auto;
+    margin-right: clamp(-50px, -8vw, -130px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+    margin-left: clamp(10px, 3vw, 30px);
+}
+
+nav ul li a {
+    font-size: clamp(14px, 1.5vw, 16px);
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: clamp(2px, 0.5vw, 5px);
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a:hover {
+    color: #555;
+    border-bottom: 2px solid #333;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    nav {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+}
+
+
+* Remove dropdown indicators for specific buttons */
+nav ul li.dropdown > a .dropdown-indicator {
+    display: none; /* Hide the dropdown indicator */
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Positioned below the dropdown button */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Start as invisible */
+    visibility: hidden; /* Hide the dropdown */
+    transform: translateY(10px); /* Start position for smooth slide */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    white-space: nowrap;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown menu on hover */
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Ensure visibility */
+    transform: translateY(0); /* Slide into view */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #e3e3e3;
+    text-align: center;
+    padding: clamp(50px, 10vw, 80px) clamp(10px, 5vw, 20px);
+}
+
+.hero h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #333;
+    margin-bottom: clamp(5px, 2vw, 10px);
+}
+
+.hero p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #666;
+    margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+.hero .btn {
+    padding: clamp(8px, 2vw, 15px) clamp(20px, 5vw, 30px);
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #555;
+}
+
+/* Video Section */
+.video-section {
+    margin-top: clamp(10px, 2vw, 15px);
+    padding: 0;
+    text-align: center;
+}
+
+.video-section video {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .video-section video {
+        width: 100%;
+    }
+}
+
+/* Mute Button */
+.mute-button {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    bottom: -220px; /* Reduce this value to move the button closer to the bottom */
+    right: 320px; /* Reduce this value to move the button closer to the right edge */
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px; /* Adjust icon size */
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Ensure the button is on top of the video */
+    display: none; /* Initially hidden */
+}
+
+.video-section:hover .mute-button {
+    display: block; /* Show the button when hovering over the video section */
+}
+
+.mute-button i {
+    display: none; /* Hide all icons by default */
+}
+
+.mute-button .fa-volume-up {
+    display: block; /* Show volume icon by default */
+}
+
+.mute-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Social Media Panel */
+.social-media-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.social-media-panel .closebtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 36px;
+    color: #444;
+    cursor: pointer;
+}
+
+.social-media-feed {
+    padding: 20px;
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 250px;
+}
+
+.feed {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+
+.facebook-feed h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fb-page {
+    border: none;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .social-media-panel {
+        width: 0%;
+    }
+}
+
+/* Membership Section */
+.membership {
+    background-color: #f9f9f9;
+    padding: clamp(40px, 8vw, 60px) 20px;
+    text-align: center;
+}
+
+.membership h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #333;
+    margin-bottom: clamp(10px, 3vw, 20px);
+    font-weight: 700;
+}
+
+.membership p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: clamp(15px, 3vw, 30px);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.membership ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.membership ul li {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #555;
+    margin-bottom: clamp(10px, 2vw, 20px);
+    position: relative;
+    padding-left: 30px;
+}
+
+.membership ul li::before {
+    content: "\2022";
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.membership .btn-application {
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: clamp(15px, 3vw, 30px);
+    margin-bottom: clamp(20px, 5vw, 60px);
+}
+
+.membership .btn-application:hover {
+    background-color: #555;
+}
+
+.membership .note {
+    margin-top: 60px; /* Reduced spacing above note */
+    font-size: 14px; /* Increased font size for better readability */
+    color: #777;
+    line-height: 1.6; /* Adjusted line-height for better readability */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* Content Sections */
+.content {
+    padding: clamp(40px, 8vw, 60px) 20px;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #333;
+    margin-bottom: clamp(10px, 3vw, 20px);
+}
+
+.content p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button.btn:hover {
+    background-color: #555;
+}
+
+/* Indoor Range */
+.indoor-range {
+    background-color: #f9f9f9;
+    padding: clamp(40px, 8vw, 60px) 20px;
+    text-align: center;
+}
+
+.indoor-range h2, .indoor-range h3 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #333;
+    margin-bottom: clamp(10px, 3vw, 20px);
+    font-weight: 700;
+}
+
+.indoor-range p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: clamp(15px, 3vw, 30px);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indoor-range p i {
+    margin-right: 8px;
+    color: #134db9;
+}
+
+/* Slideshow */
+.slideshow-container {
+    max-width: 60%;
+    margin: clamp(10px, 2vw, 20px) auto;
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+    width: 80%;
+    height: clamp(300px, 30vw, 400px);
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 100%;
+    }
+}
+
+/* Outdoor Ranges */
+.outdoor-ranges {
+    background-color: #f9f9f9;
+    padding: clamp(40px, 8vw, 60px) 20px;
+    text-align: center;
+}
+
+.outdoor-ranges h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #333;
+    font-weight: 700;
+    margin-bottom: clamp(10px, 3vw, 30px);
+}
+
+.outdoor-ranges p {
+    font-size: clamp(14px, 3vw, 18px);
+    color: #555;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.outdoor-ranges .slideshow-container{
+    width: 80%;
+    height: clamp(300px, 30vw, 400px);
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.outdoor-ranges .slideshow-container img{
+    display: block;
+    margin: 0 auto;
+
+}
+
+.outdoor-ranges .column-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(5px, 2vw, 15px);
+}
+
+.outdoor-ranges .column {
+    flex: 1;
+    min-width: 300px;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .outdoor-ranges .column-container {
+        flex-direction: column;
+    }
+
+    .outdoor-ranges .column {
+        margin-bottom: 20px;
+    }
+}
+
+.location p i {
+    margin-right: 8px; /* Spacing between icon and text */
+    color: #134db9; /* Match text color */
+}
+
+/* Events */
+main {
+    padding: clamp(20px, 5vw, 50px) clamp(10px, 2vw, 20px);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+main h2 {
+    font-size: clamp(24px, 5vw, 32px);
+    color: #333;
+    font-weight: 700;
+    margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+main h3, main h4 {
+    font-size: clamp(18px, 4vw, 24px);
+    color: #555;
+    margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+main p {
+    font-size: clamp(16px, 2.5vw, 18px);
+    color: #555;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto clamp(10px, 2vw, 20px) auto;
+}
+
+/* Responsive Design (no media query needed for clamp-based responsiveness) */
+.events-section {
+    max-width: clamp(500px, 80vw, 800px);
+    margin: 0 auto;
+    padding: clamp(10px, 4vw, 20px);
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-section h2, .events-section h3, .events-section h4 {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: clamp(5px, 1.5vw, 10px);
+}
+
+.events-section p {
+    line-height: 1.6;
+    font-size: clamp(16px, 2.5vw, 18px);
+}
+
+.lead-text {
+    font-size: clamp(18px, 3vw, 20px);
+    font-style: italic;
+    text-align: center;
+    margin-bottom: clamp(10px, 3vw, 20px);
+}
+
+.event-details {
+    margin-bottom: clamp(10px, 3vw, 20px);
+}
+
+.event-info {
+    margin: clamp(5px, 1.5vw, 10px) 0;
+}
+
+.highlight {
+    color: #007BFF;
+    font-weight: bold;
+    text-align: center;
+    margin: clamp(5px, 1.5vw, 10px) 0;
+}
+
+.programs-section {
+    margin-top: clamp(20px, 5vw, 30px);
+}
+
+.program-details h5 {
+    font-weight: bold;
+    margin: clamp(5px, 1.5vw, 10px) 0 clamp(3px, 1vw, 5px);
+}
+
+.league-image {
+    text-align: center;
+    margin-bottom: clamp(10px, 3vw, 20px);
+}
+
+.league-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #fff;
+    padding: clamp(10px, 3vw, 20px) 0;
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+    color: #333;
+}
+
+footer p {
+    font-size: clamp(10px, 2vw, 14px);
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

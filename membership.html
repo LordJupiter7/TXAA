@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/CLUB.jpg"> <!-- The favicon for the website -->
+    <title>Membership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Spice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Facebook SDK -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="GxMcl8r5"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="image-container">
+                <img src="images/ACAD.jpg" alt="Texas Archery Academy">
+                <img src="images/CLUB.jpg" alt="Texas Archery Club">
+                <img src="images/LEAG.jpg" alt="Texas Archery Indoor League">
+            </div>
+            <h1>Texas Archery</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li class="dropdown">
+                        <a href="#ranges">Ranges<span class="dropdown-indicator"></span></a>
+                        <div class="dropdown-content">
+                            <a href="indoor-ranges.html">Indoor Ranges</a>
+                            <a href="outdoor-ranges.html">Outdoor Ranges</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Information<span class="dropdown-indicator"></span></a>
+                        <div class="dropdown-content">
+                            <a href="about-us.html">Texas Archery</a>
+                            <a href="events.html">Events</a>
+                            <a href="shooters-club.html">Shooters Club</a>
+                            <a href="FAQs.html">FAQs</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="followUsBtn">Socials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+       <!-- Side Panel for Social Media Feeds -->
+    <div id="socialMediaPanel" class="social-media-panel">
+        <span class="closebtn" id="closePanel">&times;</span>
+        <section id="social-media" class="social-media-feed">
+            <div class="container">
+                <div class="feed-container">
+                    <!-- Facebook Feed 1 (Preview) -->
+                    <div class="feed facebook-feed">
+                        <div class="textwidget">
+                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FTexansArcheryClub%2F534836006552117&amp;width=242&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=427" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:427px;" allowTransparency="true"></iframe><br>&nbsp;
+
+                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FTexasArcheryAcademy%2F129809500409213&amp;width=242&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=427" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:427px;" allowTransparency="true"></iframe><br>&nbsp;
+                            
+                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2Farchery360%2F604995299538811&amp;width=242&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=427" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:427px;" allowTransparency="true"></iframe><br>&nbsp;
+                            
+                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FArchersQuest&amp;width=242&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;height=527" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:527px;" allowTransparency="true"></iframe><br>&nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="membership" class="membership">
+        <div class="container">
+            <h2>Membership</h2>
+            <p>Welcome to the Texans Archery Academy membership page! Here you can find information about our membership options and benefits. Join us to enjoy exclusive access to our range facilities, participate in special events, and be part of our archery community.</p>
+
+            <h3>Membership Benefits</h3><br>
+            <ul>
+                <li>Access to multiple indoor and outdoor ranges managed by Texans Archery Club/Texas Archery Academy.</li>
+                <li>No-cost loaner equipment at the Academy range</li>
+                <li>Free participation in monthly tournaments</li>
+                <li>Exclusive member-only events</li>
+                <li>Access to the Shooters Club (24hr access)</li>
+            </ul>
+
+            <h3>Choose a Membership Level</h3><br>
+            <ul>
+                <li>Senior Adult (62yrs+) is $120/yr annual dues (if paid monthly $12/mo) – Red membership card.</li>
+                <li>Single Adult (18yrs-62) is $180/yr annual dues (if paid monthly $17/mo) – Red membership card.</li>
+                <li>Parent & Youth (8-17yrs) is $240/yr annual dues (if paid monthly $22/mo) – Blue membership card. Restricted access – minor must be accompanied and supervised at all times by the parent. The parent is the named member. One membership card issued to the Parent.</li>
+                <li>Family membership is $300/yr annual dues (if paid monthly $27/mo) – Green membership card. A Family includes two adults and any children under 18yrs who live in the same household. Parent must be with youth at all times on the ranges.</li>
+            </ul>
+
+            <a href="http://texasarchery.info/tac-membership-form" class="btn-application">New Member Application</a>
+
+            <div class="note">
+                <p>Membership is in Texans Archery Club. This is not a retail business, but a non-profit club. The management of the affairs of this non-profit corporation is vested in its Board of Directors. The dues-paying members of Texans Archery Club are classified as non-voting members with no right of participation in the governance of the non-profit corporation.</p>
+                <p><b>MEMBERSHIP IS LIMITED, AND MAY NOT BE AVAILABLE AT THE TIME OF APPLICATION. YOU MAY BE PUT ON A WAITLIST UNTIL A SPOT OPENS. MEMBERSHIP CAN BE DENIED OR REVOKED, AND NOT ALLOWED TO REJOIN. ONCE APPROVED FOR MEMBERSHIP, NO REFUND OF DUES OR INITIATION FEES. RANGE CERTIFICATION FOR SAFETY IS REQUIRED OF ALL NEW SHOOTERS. MINORS CANNNOT BE MEMBERS. ONLY ADULTS (18 YEARS+) MAY APPLY FOR MEMBERSHIP.</b></p>
+                <p>Modest annual dues support our operations and network of ranges. All members are asked to volunteer at least an hour each year in the service of the club or archery community. We are looking for stable membership willing to help archery grow and contribute to its sustainability.</p>
+                <p>Membership privileges and requirements: adult member only. Any minors in a family membership would need to be with the parent.</p>
+                <p>New members may shoot on the ranges after reviewing the Safety Video, Orientation, and receiving membership materials. All shooters will need to achieve “range certification” prior to access to some ranges – by shooting a proficiency test at 10 yards. We suggest our 101 class or private lessons for the novice and recommend our Archers Quest program for archery knowledge development.</p>
+                <p>All minors are required to be in the company of a parent when at the ranges. Members may bring a guest to some of the ranges. Your guest is under your supervision, and responsibility – the guest fee per shooter is $10 outdoor range fee at Elm Fork and at the Academy. One guest per member, per visit please. No guests allowed in SHOOTERS CLUB or MEMBER ONLY locations unless during a public access time offered at that location.</p>
+                <p>TAC/TXAA does not assume any liability for you or anyone else on the ranges. Please understand this and use common sense. Your application is your agreement of a Waiver of Liability. You will be required to observe all range safety rules as posted at the range or website. NO GUNS OR DRUGS ALLOWED ON ANY OF OUR RANGES.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Texas Archery. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/texasarcheryacademy/?hl=en"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const followUsBtn = document.getElementById('followUsBtn');
+        const socialMediaPanel = document.getElementById('socialMediaPanel');
+        const closePanel = document.getElementById('closePanel');
+
+        // When the "Follow Us" button is clicked, open the side panel
+        followUsBtn.addEventListener('click', function() {
+            socialMediaPanel.style.width = 'clamp(300px, 5vw, 200px)'; // Adjust width of side panel as needed
+        });
+
+        // When the close button is clicked, close the side panel
+        closePanel.addEventListener('click', function() {
+            socialMediaPanel.style.width = '0';
+        });
+
+        // Close the panel when clicking outside of it
+        document.addEventListener('click', function(event) {
+            // Check if the clicked target is not the panel or the follow button
+            if (!socialMediaPanel.contains(event.target) && event.target !== followUsBtn) {
+                socialMediaPanel.style.width = '0';
+            }
+        });
+    });
+</script>
